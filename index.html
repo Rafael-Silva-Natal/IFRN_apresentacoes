@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seminário Interativo — Página</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">Práticas educativas </div>
+      <div>
+        <h1>Seminário Interativo — A ciência nas artes</h1>
+        <p class="lead"><h3>Luís da Câmara Cascudo:</h3>Historiador, sociólogo, musicólogo, antropólogo, etnógrafo, folclorista, poeta, cronista, professor, advogado, jornalista e escritor brasileiro</p>
+      </div>
+    </header>
+
+    <nav>
+      <button class="btn" id="btn-fullscreen">⤢ Tela Cheia</button>
+      <button class="btn" id="btn-toggle-notes">📓 Notas do Apresentador</button>
+      <button class="btn" id="btn-export-resp">⬇️ Exportar Respostas</button>
+      <button class="btn primary" id="btn-start">▶ Iniciar Apresentação</button>
+    </nav>
+
+    <main>
+      <div>
+        <section class="card hero">
+          <div class="chips">
+            <div class="chip">Animações CSS</div>
+            <div class="chip">Interação em tempo real</div>
+            <div class="chip">Download individual</div>
+            <div class="chip">Coleta de interesse</div>
+          </div>
+
+          <div id="intro" class="reveal">
+            <h2>Resumo rápido</h2>
+            <p class="tiny">Apresente com liberdade: avance por seções, permita aos participantes escolher downloads e registre interesses para um follow-up posterior.</p>
+            <div style="margin-top:12px" class="progress"><i id="present-progress" style="width:8%"></i></div>
+          </div>
+        </section>
+
+        <section class="card reveal" style="margin-top:12px">
+          <h2>Agenda</h2>
+          <ol class="agenda">
+            <li>Introdução e objetivos</li>
+            <li>Contexto e demonstração (interativa)</li>
+            <li>Recursos e downloads</li>
+            <li>Q&A e coleta de interesse</li>
+          </ol>
+        </section>
+
+        <section class="card reveal" style="margin-top:12px">
+          <h2>Interação — Escolha seu interesse</h2>
+          <p class="tiny">Peça que a plateia escolha tópicos que desejam receber materiais. Estes ficam registrados localmente e podem ser exportados ao final.</p>
+          <div class="grid" style="margin-top:12px">
+            <div class="card-small" data-topic="Introdução">
+              <h3>Introdução</h3>
+              <p>Resumo básico e slides simplificados.</p>
+              <div style="margin-top:8px"><button class="btn" onclick="pick('Introdução')">Quero</button></div>
+            </div>
+            <div class="card-small" data-topic="Tutorial">
+              <h3>Tutorial Prático</h3>
+              <p>Exercícios e exemplos para experimentar.</p>
+              <div style="margin-top:8px"><button class="btn" onclick="pick('Tutorial Prático')">Quero</button></div>
+            </div>
+            <div class="card-small" data-topic="Códigos">
+              <h3>Códigos e Projetos</h3>
+              <p>Arquivos fonte e esquemas.</p>
+              <div style="margin-top:8px"><button class="btn" onclick="pick('Códigos e Projetos')">Quero</button></div>
+            </div>
+            <div class="card-small" data-topic="Leituras">
+              <h3>Leituras e Referências</h3>
+              <p>Bibliografia comentada.</p>
+              <div style="margin-top:8px"><button class="btn" onclick="pick('Leituras e Referências')">Quero</button></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card reveal" style="margin-top:12px">
+          <h2>Quiz rápido</h2>
+          <p class="tiny">Ative para envolver a plateia — respostas são anônimas e exportáveis.</p>
+          <div style="margin-top:8px">
+            <p class="tiny">Qual tema você considera mais útil hoje?</p>
+            <div id="quiz" style="display:flex;gap:10px;margin-top:8px">
+              <button class="btn" onclick="answerQuiz('Teoria')">Teoria</button>
+              <button class="btn" onclick="answerQuiz('Prática')">Prática</button>
+              <button class="btn" onclick="answerQuiz('Ferramentas')">Ferramentas</button>
+            </div>
+            <p class="tiny" id="quiz-state" style="margin-top:8px">Nenhuma resposta ainda.</p>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <section class="card">
+          <h3>Recursos — Downloads</h3>
+          <p class="tiny">Clique para baixar materiais selecionados (arquivos gerados localmente).</p>
+          <div class="resources-list" style="margin-top:12px">
+            <div class="resource">
+              <div>
+                <div><strong>Resumo.pdf (exemplo)</strong></div>
+                <div class="meta">1 página • 12 KB</div>
+              </div>
+              <div><button class="btn" onclick="downloadSample('Resumo')">Baixar</button></div>
+            </div>
+
+            <div class="resource">
+              <div>
+                <div><strong>Exercicios.zip</strong></div>
+                <div class="meta">3 arquivos • 58 KB</div>
+              </div>
+              <div><button class="btn" onclick="downloadSample('Exercicios')">Baixar</button></div>
+            </div>
+
+            <div class="resource">
+              <div>
+                <div><strong>Codigo-fonte.js</strong></div>
+                <div class="meta">1 arquivo • 9 KB</div>
+              </div>
+              <div><button class="btn" onclick="downloadSample('Codigo')">Baixar</button></div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <small class="tiny">Coletor de interesses: <span id="count">0</span> participantes</small>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:12px">
+          <h3>Apresentador</h3>
+          <p class="tiny">Controles úteis</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="btn" onclick="prevStep()">◀</button>
+            <button class="btn primary" onclick="nextStep()">▶</button>
+            <button class="btn" onclick="jumpTo(2)">Agenda</button>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer>
+      Dica: copie o arquivo HTML para um pendrive e abra em qualquer navegador moderno — funciona offline.
+    </footer>
+  </div>
+
+  <!-- Fullscreen modal (Notas) -->
+  <div id="presenter-notes" class="focus" style="display:none">
+    <div class="modal">
+      <h3>Notas do Apresentador</h3>
+      <p class="tiny">Use estas notas para guiar a apresentação. Para ocultar, pressione ESC ou clique em "Fechar".</p>
+      <div contenteditable="true" id="notes-text" style="min-height:120px;margin-top:12px;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);outline:none">Escreva suas notas aqui...</div>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+        <button class="btn" onclick="closeNotes()">Fechar</button>
+        <button class="btn primary" onclick="saveNotes()">Salvar localmente</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

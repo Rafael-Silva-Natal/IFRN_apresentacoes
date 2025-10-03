@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seminário Interativo — Página</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script"></script>
+</head>
+<body>
+    </div>
+            <div class="card-small" data-topic="Tutorial">
+              <h3>Tutorial Prático</h3>
+              <p>Exercícios e exemplos para experimentar.</p>
+              <div style="margin-top:8px"><button class="btn" onclick="pick('Tutorial Prático')">Quero</button></div>
+            </div>
+            <div class="card-small" data-topic="Códigos">
+              <h3>Códigos e Projetos</h3>
+              <p>Arquivos fonte e esquemas.</p>
+              <div style="margin-top:8px"><button class="btn" onclick="pick('Códigos e Projetos')">Quero</button></div>
+            </div>
+            <div class="card-small" data-topic="Leituras">
+              <h3>Leituras e Referências</h3>
+              <p>Bibliografia comentada.</p>
+              <div style="margin-top:8px"><button class="btn" onclick="pick('Leituras e Referências')">Quero</button></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card reveal" style="margin-top:12px">
+          <h2>Quiz rápido</h2>
+          <p class="tiny">Ative para envolver a plateia — respostas são anônimas e exportáveis.</p>
+          <div style="margin-top:8px">
+            <p class="tiny">Qual tema você considera mais útil hoje?</p>
+            <div id="quiz" style="display:flex;gap:10px;margin-top:8px">
+              <button class="btn" onclick="answerQuiz('Teoria')">Teoria</button>
+              <button class="btn" onclick="answerQuiz('Prática')">Prática</button>
+              <button class="btn" onclick="answerQuiz('Ferramentas')">Ferramentas</button>
+            </div>
+            <p class="tiny" id="quiz-state" style="margin-top:8px">Nenhuma resposta ainda.</p>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <section class="card">
+          <h3>Recursos — Downloads</h3>
+          <p class="tiny">Clique para baixar materiais selecionados (arquivos gerados localmente).</p>
+          <div class="resources-list" style="margin-top:12px">
+            <div class="resource">
+              <div>
+                <div><strong>Resumo.pdf (exemplo)</strong></div>
+                <div class="meta">1 página • 12 KB</div>
+              </div>
+              <div><button class="btn" onclick="downloadSample('Resumo')">Baixar</button></div>
+            </div>
+
+            <div class="resource">
+              <div>
+                <div><strong>Exercicios.zip</strong></div>
+                <div class="meta">3 arquivos • 58 KB</div>
+              </div>
+              <div><button class="btn" onclick="downloadSample('Exercicios')">Baixar</button></div>
+            </div>
+
+            <div class="resource">
+              <div>
+                <div><strong>Codigo-fonte.js</strong></div>
+                <div class="meta">1 arquivo • 9 KB</div>
+              </div>
+              <div><button class="btn" onclick="downloadSample('Codigo')">Baixar</button></div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <small class="tiny">Coletor de interesses: <span id="count">0</span> participantes</small>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:12px">
+          <h3>Apresentador</h3>
+          <p class="tiny">Controles úteis</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="btn" onclick="prevStep()">◀</button>
+            <button class="btn primary" onclick="nextStep()">▶</button>
+            <button class="btn" onclick="jumpTo(2)">Agenda</button>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer>
+      Dica: copie o arquivo HTML para um pendrive e abra em qualquer navegador moderno — funciona offline.
+    </footer>
+  </div>
+
+  <!-- Fullscreen modal (Notas) -->
+  <div id="presenter-notes" class="focus" style="display:none">
+    <div class="modal">
+      <h3>Notas do Apresentador</h3>
+      <p class="tiny">Use estas notas para guiar a apresentação. Para ocultar, pressione ESC ou clique em "Fechar".</p>
+      <div contenteditable="true" id="notes-text" style="min-height:120px;margin-top:12px;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);outline:none">Escreva suas notas aqui...</div>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+        <button class="btn" onclick="closeNotes()">Fechar</button>
+        <button class="btn primary" onclick="saveNotes()">Salvar localmente</button>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>
