@@ -5,15 +5,48 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9fafb;
+    background-color: #95bfe9;
     color: #1f2937;
     line-height: 1.6;
   }
-  
-  h1, h2, h3 {
+  .instituicao{
+    color: #36f805;
+    font-size: 35px;
+    text-shadow: 0 0 2px #f5f7f5;
+  }
+  .aluno{
+    font-size: 20px;
+color: #10b981;
+margin-top: 0%;
+text-shadow: 0 0 5px #073b07;
+  }
+  .professora{
+color: pink;
+margin-top: 0%;
+text-shadow: 0 0 5px #00cc00;
+  }
+  h4{
+    font-size: 35px;
+    color: yellow;
+     margin: 0 0 10px 0;
+     text-shadow: 0 0 5px #00cc00;
+    
+  }
+  .tema{
+    color: #1f2937;
+    margin: 0 0 10px 0;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    text-shadow: 0 0 5px #00cc00;
+  }
+  h2, h3 {
     margin: 0 0 10px 0;
     font-weight: 600;
-    color: #111827;
+    color: #fafafc;
+  }
+
+  .imagem1{
+     margin-left: 30%;
   }
   
   a {
@@ -32,7 +65,7 @@ body {
      Cabeçalho
   ================================ */
   header {
-    background: #2563eb;
+    background: #0238ac;
     color: white;
     padding: 20px;
     text-align: center;
