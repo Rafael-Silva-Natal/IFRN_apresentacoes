@@ -241,4 +241,9 @@ h5{
     font-size: 0.9em;
     color: #4b5563;
   }
+
+  .tiny{
+    color: rgb(236, 245, 236);
+    font-size: 25px;
+  }
   

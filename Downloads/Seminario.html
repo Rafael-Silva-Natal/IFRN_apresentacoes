@@ -6,6 +6,259 @@
   <title>Seminário Interativo — Página</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
+<style>
+/* ================================
+   Estilos Gerais
+================================ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #95bfe9;
+    color: #1f2937;
+    line-height: 1.6;
+  }
+  .instituicao{
+    color: #36f805;
+    font-size: 35px;
+    text-shadow: 0 0 2px #f5f7f5;
+  }
+  .aluno{
+    font-size: 20px;
+color: #10b981;
+margin-top: 0%;
+text-shadow: 0 0 5px #073b07;
+  }
+  .professora{
+color: pink;
+margin-top: 0%;
+text-shadow: 0 0 5px #00cc00;
+  }
+  h4{
+    font-size: 35px;
+    color: yellow;
+     margin: 0 0 10px 0;
+     text-shadow: 0 0 5px #00cc00;
+    
+  }
+  .tema{
+    color: #1f2937;
+    margin: 0 0 10px 0;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    text-shadow: 0 0 5px #00cc00;
+  }
+  h2, h3 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    color: #fafafc;
+  }
+
+  .imagem1{
+     margin-left: 30%;
+  }
+  .imagem2{
+     margin-left: 18%;
+    
+  }
+  .imagem3{
+     margin-left: 5%;
+    
+  }
+  .imagem4{
+     margin-left: 3%;
+    
+  }
+
+        .links a {
+            color: #2832f8;
+           
+            font-size: 14px;
+            text-shadow: 0 0 5px #00cc00;
+            transition: transform 0.3s, text-shadow 0.3s;
+        }
+        .links a:hover {
+            transform: translateX(5px);
+            text-shadow: 0 0 8px #00cc00;
+        }
+
+  .prologo1{
+    font-size: 50px;
+    text-shadow: 0 0 5px #303430;
+    margin-left: 18%;
+    color: yellow;
+  }
+  .prologo2{
+    font-size: 40px;
+    text-shadow: 0 0 5px #ebee0d;
+   text-align: justify;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+     text-indent: 2em;
+    
+  }
+h5{
+  color: red;
+}
+  .video1{
+    margin-left: 27%;
+  }
+  .video2{
+    margin-left: 13%;
+  }
+   .video3{
+    margin-left: 13%;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* ================================
+     Cabeçalho
+  ================================ */
+  header {
+    background: #0238ac;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #1d4ed8;
+  }
+  
+  header h1 {
+    font-size: 2em;
+  }
+  
+  /* ================================
+     Botões
+  ================================ */
+  
+  button, .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover, .btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+  }
+  
+  button:active, .btn:active {
+    transform: translateY(0);
+  }
+  
+  /* ================================
+     Seções da Apresentação
+  ================================ */
+  .section {
+    margin: 40px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .section.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  /* ================================
+     Barra de Progresso
+  ================================ */
+  .progress-container {
+    width: 100%;
+    background: #e5e7eb;
+    border-radius: 6px;
+    margin: 20px 0;
+    height: 10px;
+  }
+  
+  .progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #2563eb;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+  }
+  
+  /* ================================
+     Quiz Interativo
+  ================================ */
+  .quiz-card {
+    background: #f3f4f6;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+  }
+  
+  .quiz-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .quiz-option {
+    display: block;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .quiz-option:hover {
+    background: #e5e7eb;
+  }
+  
+  .quiz-option.correct {
+    border-color: #10b981;
+    background: #d1fae5;
+  }
+  
+  .quiz-option.wrong {
+    border-color: #ef4444;
+    background: #fee2e2;
+  }
+  
+  /* ================================
+     Rodapé
+  ================================ */
+  footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #f3f4f6;
+    border-top: 2px solid #e5e7eb;
+    font-size: 0.9em;
+    color: #4b5563;
+  }
+
+  .tiny{
+    color: rgb(236, 245, 236);
+    font-size: 25px;
+  }
+  
+
+</style>
 <body>
 
   <nav>
@@ -260,8 +513,7 @@ Bibliografia
               <div>
                 <div><strong>Baixar em formato slide</strong></div>
               </div>
-              <button class="btn2" onclick="baixarArquivo()">⬇️ Baixar Seminário</button>
-
+              <div><button class="btn2" onclick="downloadSample('Resumo.pdf')">Baixar</button></div>
 
             </div>
 
@@ -294,6 +546,131 @@ Bibliografia
       Dica: copie o arquivo HTML para um pendrive e abra em qualquer navegador moderno — funciona offline.
     </footer>
   </div>
-  <script src="script.js"></script>
+  <script>
+
+// =====================
+// Função: Tela Cheia
+// =====================
+// =====================
+// Função: Tela Cheia com botão oculto durante fullscreen
+// =====================
+function toggleFullscreen() {
+  const btn = document.getElementById("btn-fullscreen");
+
+  if (!document.fullscreenElement) {
+    // Entrar em tela cheia
+    document.documentElement.requestFullscreen();
+    btn.style.display = "none"; // Esconde o botão
+  } else {
+    // Sair de tela cheia
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
+// Quando sair da tela cheia (ESC ou outro evento), o botão reaparece
+document.addEventListener("fullscreenchange", () => {
+  const btn = document.getElementById("btn-fullscreen");
+  if (!document.fullscreenElement) {
+    btn.style.display = "inline-block"; // Mostra novamente
+  }
+});
+
+document.getElementById("btn-fullscreen")?.addEventListener("click", toggleFullscreen);
+
+
+// =====================
+// Função: Seleção de interesse
+// =====================
+let picks = [];
+function pick(topic) {
+  picks.push(topic);
+  updateCounter();
+}
+
+function updateCounter() {
+  const counter = document.getElementById("count");
+  if (counter) {
+    counter.textContent = picks.length;
+  }
+}
+
+// =====================
+// Função: Quiz
+// =====================
+let quizAnswer = null;
+function answerQuiz(option) {
+  quizAnswer = option;
+  const state = document.getElementById("quiz-state");
+  if (state) {
+    state.textContent = `Você respondeu: ${quizAnswer}`;
+  }
+}
+
+// =====================
+// Função: Downloads (exemplo)
+// =====================
+function downloadSample(fileName) {
+  // Caminho relativo para a pasta de downloads
+  const filePath = `download/${fileName}`;
+
+  // Cria um link temporário para o arquivo e simula o clique
+  const link = document.createElement("a");
+  link.href = filePath;
+  link.download = fileName; // garante o download em vez de abrir
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+
+// =====================
+// Funções de navegação de slides
+// =====================
+let step = 0;
+function nextStep() {
+  step++;
+  updateProgress();
+}
+function prevStep() {
+  if (step > 0) step--;
+  updateProgress();
+}
+function jumpTo(n) {
+  step = n;
+  updateProgress();
+}
+function updateProgress() {
+  const bar = document.getElementById("present-progress");
+  if (bar) {
+    const percent = Math.min(100, (step + 1) * 25); // exemplo
+    bar.style.width = percent + "%";
+  }
+}
+
+// =====================
+// Funções de notas do apresentador
+// =====================
+function closeNotes() {
+  document.getElementById("presenter-notes").style.display = "none";
+}
+function saveNotes() {
+  const notes = document.getElementById("notes-text").innerText;
+  localStorage.setItem("presenterNotes", notes);
+  alert("Notas salvas localmente!");
+}
+
+// Recarregar notas se existirem
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem("presenterNotes");
+  if (saved) {
+    document.getElementById("notes-text").innerText = saved;
+  }
+});
+
+
+
+  </script>
 </body>
 </html>

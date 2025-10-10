@@ -61,9 +61,18 @@ function answerQuiz(option) {
 // =====================
 // Função: Downloads (exemplo)
 // =====================
-function downloadSample(fileName) {
-  alert("Simulação de download: " + fileName);
+function baixarArquivo() {
+  const caminhoArquivo = encodeURI("Downloads/Seminario.html");
+  const link = document.createElement("a");
+  link.href = caminhoArquivo;
+  link.download = "Seminario.html";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
+
+
+
 
 // =====================
 // Funções de navegação de slides
