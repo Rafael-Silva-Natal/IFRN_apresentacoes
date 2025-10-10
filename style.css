@@ -78,8 +78,10 @@ text-shadow: 0 0 5px #00cc00;
   .prologo2{
     font-size: 40px;
     text-shadow: 0 0 5px #ebee0d;
-   text-align: center;
+   text-align: justify;
+   
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
   }
 
   .video1{
