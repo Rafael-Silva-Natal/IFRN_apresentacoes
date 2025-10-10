@@ -78,7 +78,7 @@ function baixarArquivo2() {
   const caminhoArquivo = encodeURI("Downloads/Seminario_Interativo_Cascudo.pptx");
   const link = document.createElement("a");
   link.href = caminhoArquivo;
-  link.download = "Seminario_Interativo_Cascudo.pptx";
+  link.download = "seminario_Interativo_Cascudo.pptx";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
