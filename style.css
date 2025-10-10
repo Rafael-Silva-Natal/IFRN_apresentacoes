@@ -84,9 +84,14 @@ text-shadow: 0 0 5px #00cc00;
      text-indent: 2em;
     
   }
-
+h5{
+  color: red;
+}
   .video1{
     margin-left: 27%;
+  }
+  .video2{
+    margin-left: 13%;
   }
   a {
     text-decoration: none;
