@@ -1,17 +1,34 @@
 // =====================
 // Função: Tela Cheia
 // =====================
+// =====================
+// Função: Tela Cheia com botão oculto durante fullscreen
+// =====================
 function toggleFullscreen() {
+  const btn = document.getElementById("btn-fullscreen");
+
   if (!document.fullscreenElement) {
+    // Entrar em tela cheia
     document.documentElement.requestFullscreen();
+    btn.style.display = "none"; // Esconde o botão
   } else {
+    // Sair de tela cheia
     if (document.exitFullscreen) {
       document.exitFullscreen();
     }
   }
 }
 
+// Quando sair da tela cheia (ESC ou outro evento), o botão reaparece
+document.addEventListener("fullscreenchange", () => {
+  const btn = document.getElementById("btn-fullscreen");
+  if (!document.fullscreenElement) {
+    btn.style.display = "inline-block"; // Mostra novamente
+  }
+});
+
 document.getElementById("btn-fullscreen")?.addEventListener("click", toggleFullscreen);
+
 
 // =====================
 // Função: Seleção de interesse
