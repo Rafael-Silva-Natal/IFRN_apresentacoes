@@ -59,7 +59,7 @@ function answerQuiz(option) {
 }
 
 // =====================
-// Função: Downloads (exemplo)
+// Função: Downloads 
 // =====================
 function baixarArquivo() {
   const caminhoArquivo = encodeURI("Downloads/Seminario.html");
@@ -70,8 +70,19 @@ function baixarArquivo() {
   link.click();
   document.body.removeChild(link);
 }
+// =====================
+// Função: Downloads2 
+// =====================
 
-
+function baixarArquivo2() {
+  const caminhoArquivo = encodeURI("Downloads/Seminario_Interativo_Cascudo.pptx");
+  const link = document.createElement("a");
+  link.href = caminhoArquivo;
+  link.download = "Seminario_Interativo_Cascudo.pptx";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 
 // =====================
