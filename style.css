@@ -56,6 +56,10 @@ text-shadow: 0 0 5px #00cc00;
      margin-left: 5%;
     
   }
+  .imagem4{
+     margin-left: 3%;
+    
+  }
 
         .links a {
             color: #2832f8;
@@ -93,6 +97,10 @@ h5{
   .video2{
     margin-left: 13%;
   }
+   .video3{
+    margin-left: 13%;
+  }
+
   a {
     text-decoration: none;
     color: inherit;
