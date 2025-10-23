@@ -84,6 +84,20 @@ function baixarArquivo2() {
   document.body.removeChild(link);
 }
 
+// =====================
+// Função: Downloads3 
+// =====================
+
+function baixarArquivo3() {
+  const caminhoArquivo = encodeURI("Downloads/Seminario_Interativo_Cascudo.odp");
+  const link = document.createElement("a");
+  link.href = caminhoArquivo;
+  link.download = "seminario_Interativo_Cascudo.odp";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 
 // =====================
 // Funções de navegação de slides
