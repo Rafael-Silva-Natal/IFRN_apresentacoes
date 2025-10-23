@@ -246,4 +246,10 @@ h5{
     color: rgb(236, 245, 236);
     font-size: 25px;
   }
+  .slide{
+  color: pink;
+   font-size: 0.9em;
+    text-shadow: 0 0 8px #00cc00;
+
+  }
   
