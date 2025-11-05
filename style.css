@@ -5,12 +5,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #95bfe9;
+    background-color: #b1f3c9;
     color: #1f2937;
     line-height: 1.6;
   }
   .instituicao{
-    color: #36f805;
+    color: #8eec77;
     font-size: 35px;
     text-shadow: 0 0 2px #f5f7f5;
   }
@@ -75,9 +75,9 @@ text-shadow: 0 0 5px #00cc00;
 
   .prologo1{
     font-size: 50px;
-    text-shadow: 0 0 5px #303430;
+    text-shadow: 0 0 10px #fde802;
     margin-left: 18%;
-    color: yellow;
+    color: rgb(29, 112, 5);
   }
   .prologo2{
     font-size: 40px;
@@ -116,12 +116,17 @@ h5{
   /* ================================
      Cabeçalho
   ================================ */
+  .imagemTopo{
+    border-bottom: 0px;
+    margin: 0px;
+    border: 0px;
+  }
   header {
-    background: #0238ac;
+    background: #046317;
     color: white;
     padding: 20px;
     text-align: center;
-    border-bottom: 4px solid #1d4ed8;
+    
   }
   
   header h1 {
@@ -137,7 +142,7 @@ h5{
     padding: 10px 20px;
     border-radius: 8px;
     border: none;
-    background: #2563eb;
+    background: #147c23;
     color: white;
     font-size: 1em;
     font-weight: 500;
