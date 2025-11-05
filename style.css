@@ -86,7 +86,8 @@ text-shadow: 0 0 5px #00cc00;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
      text-indent: 2em;
-    
+    padding-left: 3%;
+    padding-right: 3%;
   }
 h5{
   color: red;
