@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gênero Jornalístico Argumentativo — Apresentação</title>
+  
+  <!-- Fontes externas mantidas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#7c3aed;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.03);
+      --text:#e6eef8;
+      --maxw:1000px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg, var(--bg) 0%, #071028 60%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:0;
+    }
+
+    /* ======== CABEÇALHO DE IMAGEM ISOLADO ======== */
+    .imagemTopo2 {
+      width: 100%;
+      background-color: #0b1220;
+      display: block; /* impede influência de flex do body */
+      text-align: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      z-index: 10;
+    }
+    .imagemTopo2 img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+    }
+
+    /* ======== CONTEÚDO GERAL ======== */
+    .container{
+      width:100%;
+      max-width:var(--maxw);
+      margin: 0 auto;
+      padding:48px 20px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      margin-bottom:22px;
+    }
+    .logo{
+      width:78px;height:78px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),#06b6d4);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;color:white;font-family:Merriweather,serif;font-size:22px;
+      box-shadow:0 6px 30px rgba(0,0,0,0.6)
+    }
+    h1{margin:0;font-family:Merriweather,serif;font-weight:700;font-size:22px}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+    main{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:20px;
+      align-items:start;
+    }
+    @media (max-width:900px){
+      main{grid-template-columns:1fr}
+    }
+
+    .card{
+      background: linear-gradient(180deg,var(--card), rgba(8,12,20,0.9));
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 6px 30px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .slides .slide{
+      padding:18px;
+      border-radius:12px;
+      margin-bottom:14px;
+      background:linear-gradient(180deg,var(--glass),var(--glass-2));
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .slides .slide h2{margin:0 0 8px;font-size:16px;font-weight:700}
+    .slides .slide ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+    .slides .slide ul li{margin:6px 0}
+    .slides .slide p{margin:6px 0;color:var(--muted)}
+
+    aside .box{
+      padding:16px;
+      border-radius:12px;
+      margin-bottom:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    aside h3{margin:0 0 8px;font-size:15px}
+    .meta{display:flex;gap:12px;align-items:center}
+    .chip{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    .excerpt{
+      font-family: 'Merriweather',serif;
+      background:linear-gradient(90deg, rgba(0,0,0,0.18), rgba(255,255,255,0.02));
+      padding:12px;
+      border-radius:10px;
+      border-left:3px solid var(--accent);
+      color:var(--text);
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--accent),#06b6d4);
+      color:white;text-decoration:none;
+      font-weight:600;font-size:13px;
+      box-shadow:0 8px 28px rgba(124,58,237,0.14)
+    }
+    .small{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho isolado no topo -->
+  <div class="imagemTopo2">
+    <img src="imagens/IFRN_Cabecalhos.png" alt="Cabeçalho IFRN">
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="container">
+    <header>
+      <div class="logo">GJ</div>
+      <div>
+        <h1>Gênero Jornalístico Argumentativo</h1>
+        <p class="lead">Apresentação — resumo dos slides e análise do texto <em>Tecnoadrenalina</em></p>
+      </div>
+    </header>
+
+    <main>
+      <section class="card slides" aria-label="Conteúdo principal">
+
+        <!-- slides -->
+        <article class="slide" id="slide1">
+          <h2>Slide 1 – Título</h2>
+          <p class="small">O Gênero Jornalístico Argumentativo — análise e características</p>
+        </article>
+
+        <article class="slide" id="slide2">
+          <h2>Slide 2 – O que são gêneros de linguagem</h2>
+          <ul>
+            <li>Formas sociais de uso da língua;</li>
+            <li>Cada gênero tem <strong>estrutura</strong>, <strong>objetivo</strong> e <strong>estilo</strong> próprios;</li>
+            <li>Exemplos: notícia, receita, carta, artigo, crônica.</li>
+          </ul>
+        </article>
+
+        <!-- (...restante dos slides iguais ao seu original...) -->
+
+      </section>
+
+      <aside>
+        <div class="card box">
+          <h3>Resumo rápido</h3>
+          <p class="small">Esta página reúne os tópicos essenciais para uma apresentação sobre o gênero jornalístico argumentativo.</p>
+        </div>
+      </aside>
+
+    </main>
+
+    <footer>
+      Página gerada para apresentação escolar • Conteúdo editável • Estilo responsivo
+    </footer>
+  </div>
+
+</body>
+</html>
