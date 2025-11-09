@@ -1,31 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-.body{
-   
-    background-color: rgb(196, 239, 196);
-}
-.imagemTopo2{
-    border-bottom: 0px;
-    margin: 0px;
-    border: 0px;
-   
-margin-left: 5%;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gênero Jornalístico Argumentativo — Apresentação</title>
+  
+  <!-- Fontes externas mantidas -->
+  
+  <style>
+    
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg, var(--bg) 0%, #77f9b4 60%);
+      line-height:1.5;
+      padding:0;
+      background-color: #77f9b4;
+    }
 
-}
-.instituicao{
-    margin-left: 5%;
-}
-</style>
-<body class="body">
-    <div class="imagemTopo2">
-                <img src="imagens/IFRN_Cabecalhos.png">
-            </div>
+    /* ======== CABEÇALHO DE IMAGEM ISOLADO ======== */
+    .imagemTopo2 {
+      width: 100%;
+      background-color: #38f78e;
+      display: block; /* impede influência de flex do body */
+      text-align: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      z-index: 10;
+    }
+    .imagemTopo2 img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+    }
+
+
+  
+  </style>
+</head>
+
+<body>
+  <!-- Cabeçalho isolado no topo -->
+  <div class="imagemTopo2">
+    <img src="imagens/IFRN_Cabecalhos.png" alt="Cabeçalho IFRN">
+  </div>
+
+  <!-- Conteúdo principal -->
+
 
              <header>
         <div class="instituicao">Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte</div>
@@ -44,17 +70,19 @@ margin-left: 5%;
 
       <br><br>
       <div class="logo"><h4>Disciplina: Português</h4></div>
-      <p class="professora">Prof.a Idalina</p>
+      <p class="professora">Professora: Aldalina Ribeiro Freitas</p>
 
       <div class="logo"><h4>Trabalhos e seminários</h4></div>
       
  <ul class="links">
-      <li><a href="Portugues.html" target="_blank">Gêneros de linguagens(Jornalístico argumentativo)</a></li>
+      <li><a href="TrabalhoRecusado2.html" target="_blank">Trabalho Recusado1</a></li>
       
       <br>
-       <li><a href="Portugues2.html" target="_blank">Gêneros de linguagens(Jornalístico argumentativo)</a></li>
+       <li><a href="TrabalhoRecusado.html" target="_blank">Trabalho recusado2</a></li>
        <br>
-        <li><a href="Portugues3.html" target="_blank">Gêneros de linguagens(Jornalístico argumentativo)</a></li>
+        <li><a href="portugues.html" target="_blank">Gêneros de linguagens(Jornalístico argumentativo)</a></li>
     </header>
+  
+
 </body>
 </html>
