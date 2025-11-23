@@ -252,10 +252,287 @@ Portanto: </p>
  <h2>
 Problema matemático contextualizado na Física. 
 </h2>
+
+<p>
+  Um móvel descreve um MUV numa trajetória retilínea e os seus espaços variam no tempo de acordo com a expressão: 
+S= 9+3t−2.t2
+�
+=
+ 
+9
++
+3
+�
+−
+2
+.
+�
+2
+ 
+, onde o tempo é expresso em segundos e o espaço em metros. 
+
+Determinar: 
+
+A função da velocidade; 
+
+O instante em que o móvel passa pela origem dos espaços. 
+
+Solução: 
+
+	a) Comparando a expressão dada 
+
+S= 9+3t−2.t2
+�
+=
+ 
+9
++
+3
+�
+−
+2
+.
+�
+2
+ 
+ 
+
+	com a função 
+
+S= S0+v0t+12α.t2
+�
+=
+ 
+�
+0
++
+�
+0
+�
++
+1
+2
+𝛼
+.
+�
+2
+ 
+ 
+
+Podemos observar no enunciado que 
+ S0=9m
+ 
+�
+0
+=
+9
+�
+ 
+; 
+ v0=+3ms
+ 
+�
+0
+=
++
+3
+�
+�
+ 
+;
+ α=−4ms2
+ 
+𝛼
+=
+−
+4
+�
+�
+2
+ 
+. 
+
+Sendo a função da velocidade 
+v=v0+α.t
+�
+=
+�
+0
++
+𝛼
+.
+�
+ 
+, podemos concluir que: 
+
+v=3−4.t 
+�
+=
+3
+−
+4
+.
+�
+ 
+ 
+               
+(t→s, v→ ms)
+�
+→
+�
+,
+ 
+�
+→
+ 
+�
+�
+ 
+ 
+
+	b) O móvel passa pela origem de espaços (marco zero) quando seu espaço S=0. 
+
+Na equação: 
+S= 9+3t−2.t2
+�
+=
+ 
+9
++
+3
+�
+−
+2
+.
+�
+2
+ 
+,  
+
+Sendo S=0, organizando a equação teremos:  
+2.t2−3.t−9=0
+2
+.
+�
+2
+−
+3
+.
+�
+−
+9
+=
+0
+ 
+, 
+
+Tratando-se de uma equação de segundo grau, poderemos achar o valor correspondentes do instante achando as raízes da equação, convém observar que o valor da raiz que procuramos deve ser maior que zero, pois a função horária define apenas instantes posteriores a um evento, nesse caso o tempo igual a zero. 
+
+Prosseguindo o desenvolvimento pela fórmula de Bhaskara teremos: 
+
+−b±b2−4.a.c−−−−−−−−√2.a
+−
+�
+±
+�
+2
+−
+4
+.
+�
+.
+�
+2
+.
+�
+ 
+    
+→ 
+→
+ 
+ 
+ 
+−(−3)±(−3)2−4.(2).(−9)−−−−−−−−−−−−−−−√2.2
+−
+−
+3
+±
+−
+3
+2
+−
+4
+.
+2
+.
+−
+9
+2
+.
+2
+ 
+ 
+
+	
+∴ 
+∴
+ 
+ 
+ 
+t′=3 s       t''=−1,5 s
+�
+′
+=
+3
+ 
+�
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+�
+′
+′
+=
+−
+1
+,
+5
+ 
+�
+ 
+ 
+
+ 
+
+	Resposta:  
+t′=3 s
+�
+′
+=
+3
+ 
+�
+ 
+, o móvel passa pela origem no instante 3s. 
+</p>
 <h2>
 Referências. 
 </h2>
- <p></p>
+ <p>
+  ChatGPT, 
+
+Microsoft copilot, 
+
+Google AI, 
+
+ 
+
+Os fundamentos da Física, Ramalho, Ivan, Nicolau, Toledo. Volume um, mecânica, páginas 44,45. (exercícios resolvidos, R.14). 
+ </p>
 
 
 
@@ -276,6 +553,26 @@ Referências.
             </div>
     
 </div>
+<br>
+<div class="resources-list" style="margin-top:12px">
+            <div class="resource">
+              <div>
+                <div><strong>Baixar pdf</strong></div>
+              </div>
+              <button class="btn" onclick="baixarArquivo2()">⬇️ pdf</button>
+            </div>
+    
+</div>
+<br>
+<div class="resources-list" style="margin-top:12px">
+            <div class="resource">
+              <div>
+                <div><strong>Baixar ODT </strong></div>
+              </div>
+              <button class="btn" onclick="baixarArquivo3()">⬇️ ODT</button>
+            </div>
+    
+</div>
 <footer>
       Página gerada para apresentação escolar • Conteúdo editável • Estilo responsivo
     </footer>
@@ -287,6 +584,25 @@ function baixarArquivo() {
   const link = document.createElement("a");
   link.href = caminhoArquivo;
   link.download = "Downloads/Matematica Fundamental.pptx";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function baixarArquivo2() {
+  const caminhoArquivo = encodeURI("Downloads/Matematica IFRN.pdf");
+  const link = document.createElement("a");
+  link.href = caminhoArquivo;
+  link.download = "Downloads/Matematica IFRN.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+function baixarArquivo3() {
+  const caminhoArquivo = encodeURI("Downloads/Matematica IFRN.odt");
+  const link = document.createElement("a");
+  link.href = caminhoArquivo;
+  link.download = "Downloads/Matematica IFRN.odt";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
