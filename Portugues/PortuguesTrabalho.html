@@ -49,7 +49,7 @@
 <body>
   <!-- Cabeçalho isolado no topo -->
   <div class="imagemTopo2">
-    <img src="imagens/IFRN_Cabecalhos.png" alt="Cabeçalho IFRN">
+    <img src="../imagens/IFRN_Cabecalhos.png" alt="Cabeçalho IFRN">
   </div>
 
   <!-- Conteúdo principal -->
@@ -164,10 +164,10 @@
   <script>
  
 function baixarArquivo() {
-  const caminhoArquivo = encodeURI("Downloads/Presentation.pptx");
+  const caminhoArquivo = encodeURI("../Downloads/Presentation.pptx");
   const link = document.createElement("a");
   link.href = caminhoArquivo;
-  link.download = "Downloads/Presentation.pptx";
+  link.download = "../Downloads/Presentation.pptx";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
