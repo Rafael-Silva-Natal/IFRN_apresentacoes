@@ -79,7 +79,7 @@ O relatório da ONU sobre a alimentação nos estados brasileiros indica que o B
    <div class="resources-list" style="margin-top:12px">
             <div class="resource">
               <div>
-                <div><strong>Baixar em formato slide</strong></div>
+                <div><strong>Baixar PDF</strong></div>
               </div>
               <button class="btn" onclick="baixarArquivo()">⬇️ Baixar Seminário</button>
             </div>
@@ -92,10 +92,10 @@ O relatório da ONU sobre a alimentação nos estados brasileiros indica que o B
   <script>
  
 function baixarArquivo() {
-  const caminhoArquivo = encodeURI("Downloads/Presentation.pptx");
+  const caminhoArquivo = encodeURI("../Downloads/Relatório_Português_IFRN.pdf");
   const link = document.createElement("a");
   link.href = caminhoArquivo;
-  link.download = "Downloads/Presentation.pptx";
+  link.download = "../Downloads/Relatório_Português_IFRN.pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
