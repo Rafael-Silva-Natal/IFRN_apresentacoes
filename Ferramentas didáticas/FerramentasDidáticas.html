@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lingua Portuguesa</title>
+  
+  <!-- Fontes externas mantidas -->
+  
+  <style>
+    
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg, var(--bg) 0%, #77f9b4 60%);
+      line-height:1.5;
+      padding:0;
+      background-color: #464846;
+    }
+
+    /* ======== CABEÇALHO DE IMAGEM ISOLADO ======== */
+    .imagemTopo2 {
+      width: 100%;
+      background-color: #0d0d0d;
+      display: block; /* impede influência de flex do body */
+      text-align: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      z-index: 10;
+    }
+    .imagemTopo2 img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+    }
+    .instituicao{
+        color: #a0ffa0;
+        margin-left: 10px;
+        text-shadow: 0 0 5px #00cc00;
+    }
+    .titulo{
+        text-align: center;
+    }
+    .topicos{
+         margin-left: 10px;
+    }
+
+     .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+      .links a {
+            color: #a0ffa0;
+            text-decoration: none;
+            font-size: 14px;
+            text-shadow: 0 0 5px #00cc00;
+            transition: transform 0.3s, text-shadow 0.3s;
+        }
+         .links a:hover {
+            transform: translateX(5px);
+            text-shadow: 0 0 8px #00cc00;
+        }
+
+.btn{
+      display:inline-block;padding:10px 14px;border-radius:10px;background:rgb(250, 89, 89);color:rgb(92, 246, 133);text-decoration:none;font-weight:600;font-size:13px;box-shadow:0 8px 28px rgba(124,58,237,0.14)
+    }
+  
+  </style>
+</head>
+
+<body>
+  <!-- Cabeçalho isolado no topo -->
+  <div class="imagemTopo2">
+    <img src="../imagens/apresentacao.png" alt="Cabeçalho IFRN">
+  </div>
+
+  <!-- Conteúdo principal -->
+
+
+             <header>
+        <div class="instituicao">Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte</div>
+        <div class="instituicao">Campus Natal-Central</div>
+    <br>
+<h1 class="titulo">Ferramentas didáticas</h1>
+<br>
+    </header>
+
+    <main>
+      <section class="card slides" aria-label="Conteúdo principal">
+
+        <article class="slide" id="slide1">
+          <h2 class="topicos">Física</h2>
+          </article>
+           <div class="links">
+          <ul>
+           <li><a href="https://phet.colorado.edu/" target="_blank">Universidade do Colorado (PHET)</a></li>
+      <br>
+      <li><a href="https://javalab.org/en/" target="_blank">Simulação científica, Sonda de detecção, Programação</a></li>
+
+      </ul>
+      </div>
+ <article class="slide" id="slide2">
+          <h2 class="topicos">Matemática</h2>
+          </article>
+             <div class="links">
+          <ul>
+           
+     <li><a href="https://www.cymath.com/" target="_blank">Calculadora (Desenvolvimento numérico)</a></li>
+      <br>
+     <li><a href="https://www.desmos.com/calculator?lang=pt-BR" target="_blank">Calculadora gráfica (Desmos)</a></li>
+      
+      </ul>
+      </div>
+
+        <article class="slide" id="slide2">
+          <h2 class="topicos">Química</h2>
+          </article>
+             <div class="links">
+          <ul>
+           <li><a href="http://chemistry-en.notebook.com/" target="_blank">Química</a></li>
+      
+      </ul>
+      </div>
+        
+
+        <article class="slide" id="slide3">
+           <h2 class="topicos">Textos</h2>
+        </article>
+        <div class="links">
+          <ul>
+           <li><a href="https://lightpdf.com/" target="_blank">Editor de pdf</a></li>
+      <br>
+      <li><a href="https://www.typingclub.com/" target="_blank">digitação de texto</a></li>
+<br>
+      <li><a href="https://pt.welib.org/" target="_blank">Pesquisa de livros</a></li>
+
+      </ul>
+      </div>
+
+        <article class="slide" id="slide4">
+          <h2 class="topicos">Eletrônicos</h2>
+        </article>
+         <div class="links">
+          <ul>
+           <li><a href="https://www.tinkercad.com/" target="_blank">Tinkercad</a></li>
+      <br>
+      <li><a href="https://www.buildcores.com/" target="_blank">Montagem virtual de computadores</a></li>
+<br>
+      <li><a href="https://pt.ifixit.com/" target="_blank">Reparação de eletrônicos</a></li>
+<br>
+ <li><a href="https://simulator.electude.com/" target="_blank">Manutenção elétrica (Carros)</a></li>
+
+      </ul>
+      </div>
+<article class="slide" id="slide2">
+          <h2 class="topicos">Utilitários</h2>
+          </article>
+             <div class="links">
+          <ul>
+           <li><a href="https://w2g.tv/en/" target="_blank">Sala de videos para grupo de estudos</a></li>
+      
+      </ul>
+      </div>
+
+ <br><br>
+    <footer class="topicos">
+      Página gerada para apresentação escolar • Conteúdo editável • Estilo responsivo
+    </footer>
+    <br>
+
+     
+    <!--
+   <div class="resources-list" style="margin-top:12px">
+            <div class="resource">
+              <div>
+                <div><strong>Baixar em formato slide</strong></div>
+              </div>
+              <button class="btn" onclick="baixarArquivo()">⬇️ Baixar Seminário</button>
+            </div>
+    
+</div>
+
+  </div>
+  <script>
+ 
+function baixarArquivo() {
+  const caminhoArquivo = encodeURI("../Downloads/Presentation.pptx");
+  const link = document.createElement("a");
+  link.href = caminhoArquivo;
+  link.download = "../Downloads/Presentation.pptx";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+  </script> -->
+
+</body>
+</html>
