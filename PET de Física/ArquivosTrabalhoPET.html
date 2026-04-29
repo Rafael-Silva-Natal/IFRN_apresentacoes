@@ -40,7 +40,7 @@
     }
 
 .btn{
-      display:inline-block;padding:10px 14px;border-radius:10px;background:rgb(250, 89, 89);color:rgb(92, 246, 133);text-decoration:none;font-weight:600;font-size:13px;box-shadow:0 8px 28px rgba(124,58,237,0.14)
+      display:inline-block;padding:10px 14px;border-radius:10px;background:rgb(65, 135, 196);color:rgb(237, 29, 29);text-decoration:none;font-weight:600;font-size:13px;box-shadow:0 8px 28px rgba(124,58,237,0.14)
     }
   
      .Texto {
@@ -77,9 +77,26 @@
          .instituicao{
         color: #141514;
         margin-left: 10px;
-        text-shadow: 0 0 5px #354cf9;
+        text-shadow: 0 0 5px #52f904;
         font-size: 30px;
     }
+     .instituicao2{
+        color: #141514;
+        margin-left: 10px;
+        text-shadow: 0 0 5px #354cf9;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .containerQRcode {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.QRcode{
+  text-align: center;
+
+}
   </style>
 </head>
 
@@ -116,23 +133,53 @@
             </div>
         </div>
     </div>
-   <br>   
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/9znfunIeqXE?si=QFfdoR7vOuf8Sh7V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-<br><br>
-   <h2>Slide</h2>
+   <br>  
+   <p class="instituicao2">
+    Apresentação de mídia sobre resoluções de problemas da Física publicadas em provas.
+   </p> 
+       <h3 class="QRcode">Questões da OBF</h3>
+<div class="containerQRcode">
+<img src="../imagens/OBF slogan.png" alt="Cabeçalho IFRN">
+</div>
 <br>
+<h3 class="QRcode">Referências da prova escolhida</h3>
+<div class="containerQRcode">
+<img src="../imagens/InformaçõesDaProvaOBF.PNG" alt="Cabeçalho IFRN">
+</div>
+<br>
+<h3 class="QRcode">Questão da prova</h3>
+<div class="containerQRcode">
+<img src="../imagens/QuestãoOBF.PNG" alt="Cabeçalho IFRN">
+</div>
+<br>
+   <h2 class="QRcode">Resolução proposta:</h2>
+<div class="containerQRcode">
 <iframe src="https://1drv.ms/p/c/578c18d12d507a13/IQSGJpojDv-FQ4QRvVXkar7QAYTZ2trTjNM90F0HO_puobU?wdAr=1.7777777777777777" width="476px" height="288px" frameborder="0" title="Visualizador do PowerPoint">Este é um apresentação do <a target="_blank" href="https://office.com">Microsoft Office</a> incorporado, da plataforma <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
-
+</div>
 <br>
-<p>FRAME-CODE</p>
+
+<h2 class="QRcode">VIdeo interativo:</h2>
+<div class="containerQRcode">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9znfunIeqXE?si=QFfdoR7vOuf8Sh7V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<br>
+<h3>Arquivos disponíveis para download</h3>
    <div class="resources-list" style="margin-top:12px">
             <div class="resource">
               <div>
-                <div><strong>Baixar PDF</strong></div>
+                <div><strong>Baixar slide da questão</strong></div>
               </div>
               <button class="btn" onclick="baixarArquivo()">⬇️ Baixar PDF</button>
+            </div>
+    
+</div>
+
+<div class="resources-list" style="margin-top:12px">
+            <div class="resource">
+              <div>
+                <div><strong>Baixar prova da OBF</strong></div>
+              </div>
+              <button class="btn" onclick="baixarArquivo2()">⬇️ Baixar prova</button>
             </div>
     
 </div>
@@ -147,6 +194,16 @@ function baixarArquivo() {
   const link = document.createElement("a");
   link.href = caminhoArquivo;
   link.download = "../Downloads/TrabalhoPET.pptx";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function baixarArquivo2() {
+  const caminhoArquivo = encodeURI("../Downloads/ProvaDaOBF.pdf");
+  const link = document.createElement("a");
+  link.href = caminhoArquivo;
+  link.download = "../Downloads/ProvaDaOBF.pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
