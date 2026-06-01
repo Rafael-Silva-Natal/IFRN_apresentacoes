@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estratégias de Ensino para Idosos - Apresentação Corrigida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght=400;700&family=DM+Sans:wght=400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* 1. CONFIGURAÇÕES BASE & RESET */
+        * { 
+            box-sizing: border-box; 
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #0f172a; /* Fundo escuro para destacar o slide */
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* 2. ESTRUTURA RESPONSIVA DOS SLIDES (ADAPTÁVEL) */
+        .presentation-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 75vh;
+            min-height: 550px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            background-color: #ffffff;
+            z-index: 1;
+            overflow-y: auto; /* Permite rolar apenas DENTRO do slide se o texto for muito longo */
+        }
+
+        /* Slide Ativo */
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }
+
+        /* Fundo Abstrato sutil */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.02) 0%, rgba(245, 158, 11, 0.02) 100%);
+            z-index: -1;
+        }
+
+        /* 3. TIPOGRAFIA */
+        h1, h2, h3 {
+            color: #0f172a;
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+        }
+
+        h1 { 
+            font-size: clamp(32px, 5vw, 52px); 
+            line-height: 1.2; 
+            margin-bottom: 20px; 
+            color: #1e3a8a; 
+            text-align: center;
+        }
+
+        .slide-title { 
+            font-size: clamp(24px, 3vw, 32px); 
+            margin-bottom: 30px; 
+            text-align: left; 
+            width: 100%; 
+            border-left: 6px solid #f59e0b; 
+            padding-left: 15px;
+            align-self: flex-start;
+        }
+
+        h3 { 
+            font-size: clamp(20px, 2vw, 24px); 
+            margin-bottom: 12px; 
+            color: #1e40af; 
+        }
+
+        p { 
+            font-size: clamp(16px, 1.5vw, 19px); 
+            line-height: 1.6; 
+            color: #334155; 
+            margin-bottom: 15px;
+        }
+
+        .subtitle { 
+            font-size: clamp(18px, 2vw, 22px); 
+            color: #64748b; 
+            margin-top: 10px; 
+            max-width: 800px; 
+            text-align: center;
+        }
+
+        .content-area {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* 4. LAYOUTS INTERNOS */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+            align-items: center;
+        }
+
+        /* Ajuste para telas menores/janelas divididas no VS Code */
+        @media (max-width: 768px) {
+            .two-column { grid-template-columns: 1fr; gap: 20px; }
+            .slide { padding: 20px; }
+        }
+
+        .tiled-content {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .tiled-content { flex-direction: column; }
+        }
+
+        .tile {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .tile .icon { 
+            font-size: 36px; 
+            color: #f59e0b; 
+            margin-bottom: 15px; 
+        }
+
+        .image-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            height: 300px;
+            width: 100%;
+        }
+        .image-wrapper img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        }
+
+        /* Listas Estilizadas */
+        .bullet-list { 
+            width: 100%; 
+            list-style: none; 
+        }
+        .bullet-list li { 
+            position: relative; 
+            padding-left: 45px; 
+            margin-bottom: 18px; 
+            font-size: 18px;
+        }
+        .bullet-list i { 
+            position: absolute; 
+            left: 5px; 
+            top: 4px; 
+            color: #1e3a8a; 
+            font-size: 20px; 
+        }
+
+        /* Tabelas */
+        .table-responsive { width: 100%; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; border: 1px solid #e2e8f0; }
+        th { background-color: #1e3a8a; color: white; padding: 14px; text-align: left; font-size: 16px; }
+        td { padding: 14px; background-color: #fff; border-bottom: 1px solid #e2e8f0; font-size: 16px; }
+
+        /* Indicadores Numéricos */
+        .big-number { 
+            font-size: clamp(80px, 10vw, 130px); 
+            font-weight: 700; 
+            color: #f59e0b; 
+            font-family: 'Merriweather', serif; 
+            line-height: 1; 
+        }
+        .number-label { 
+            font-size: 22px; 
+            color: #1e3a8a; 
+            margin-top: 10px;
+        }
+
+        /* Layout Sangria Lateral Adaptado */
+        .slide.bleed-layout { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            padding: 0; 
+        }
+        .bleed-text { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+        .bleed-img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Separadores de Seção */
+        .section-break { text-align: center; max-width: 80%; }
+        .section-break h2 { font-size: clamp(32px, 5vw, 46px); color: #1e3a8a; margin-bottom: 15px; }
+
+        /* 5. CONTROLES FIXOS DE NAVEGAÇÃO */
+        .controls {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            background-color: #0f172a;
+        }
+        .btn-nav {
+            background-color: #1e293b;
+            color: white;
+            border: 1px solid #334155;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-nav:hover { background-color: #334155; }
+        .slide-counter { color: #94a3b8; font-size: 16px; font-weight: 500; }
+    </style>
+</head>
+<body>
+
+    <div class="presentation-container">
+
+        <div class="slide active" id="slide-1">
+            <div class="content-area" style="text-align: center; align-items: center;">
+                <i class="fa-solid fa-graduation-cap" style="font-size: 50px; color: #f59e0b; margin-bottom: 20px;"></i>
+                <h1>Estratégias de Ensino<br>para Idosos</h1>
+                <p class="subtitle">Desafios demográficos, Gerontologia Educacional e abordagens práticas para o êxito na aprendizagem ao longo da vida.</p>
+                <div style="margin-top: 30px; font-weight: bold; color: #1e3a8a; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
+                    Resumo Científico & Projetos Reais
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-2">
+            <div class="section-break">
+                <h2>O Novo Cenário Demográfico</h2>
+                <p>A inversão da pirâmide etária e seus impactos estruturais no ecossistema de educação do país.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-3">
+            <h2 class="slide-title">Projeção Demográfica Dinâmica</h2>
+            <div class="content-area">
+                <div class="two-column">
+                    <div style="text-align: center;">
+                        <div class="big-number">33,7%</div>
+                        <div class="number-label">População Idosa em 2060</div>
+                    </div>
+                    <div>
+                        <h3>Mudança Sem Precedentes</h3>
+                        <p>O Brasil caminha para uma estrutura de idades predominantemente madura. A queda na fecundidade e o aumento da longevidade alteraram o topo da pirâmide.</p>
+                        <p><strong>Desafio:</strong> O sistema de ensino clássico foi desenhado para jovens. Há urgência de reestruturação para atender um público sênior massivo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-4">
+            <h2 class="slide-title">Conceito: Gerontologia Educacional</h2>
+            <div class="content-area">
+                <div class="two-column">
+                    <div>
+                        <h3>Mudança de Paradigma</h3>
+                        <p>Consolidada por <strong>David Peterson (1976)</strong>, estuda a interseção entre os processos pedagógicos e o envelhecimento populacional.</p>
+                        <p>Historicamente, ações para idosos focavam no assistencialismo ou lazer passivo. Hoje, foca-se no **desenvolvimento intelectual contínuo** e autonomia.</p>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="../imagens/idosos.jfif">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-5">
+            <h2 class="slide-title">O Tripé de Peterson (1976)</h2>
+            <div class="content-area">
+                <div class="tiled-content">
+                    <div class="tile">
+                        <div class="icon"><i class="fa-solid fa-user-graduate"></i></div>
+                        <h3>Educação PARA Idosos</h3>
+                        <p>Programas criados diretamente para a aprendizagem do público 60+. Foco em novos conhecimentos e engajamento.</p>
+                    </div>
+                    <div class="tile">
+                        <div class="icon"><i class="fa-solid fa-users"></i></div>
+                        <h3>Educação SOBRE o Idoso</h3>
+                        <p>Sensibilização direcionada à sociedade com o objetivo principal de combater o idadismo (preconceito etário).</p>
+                    </div>
+                    <div class="tile">
+                        <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+                        <h3>Formação Profissional</h3>
+                        <p>Preparação técnica e teórica de educadores e andragogos para atuarem de forma humanizada e eficiente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-6">
+            <h2 class="slide-title">Modelos Metodológicos de Ensino</h2>
+            <div class="content-area">
+                <div class="two-column">
+                    <div style="background: #f8fafc; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <h3 style="color: #f59e0b;"><i class="fa-solid fa-brain"></i> Pedagogia Problematizadora</h3>
+                        <p>Inspirada em bases freireanas, defende que o aprendizado do idoso parte da reflexão sobre sua própria realidade social e história de vida.</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <h3 style="color: #1e40af;"><i class="fa-solid fa-lightbulb"></i> Estratégias Cognitivas</h3>
+                        <p>Adapta o ensino às transformações sensoriais naturais da idade utilizando recursos visuais de alto contraste e contextualização prática imediata.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-7">
+            <h2 class="slide-title">Projetos Existentes de Referência</h2>
+            <div class="content-area">
+                <div class="two-column">
+                    <div>
+                        <h3>Iniciativas de Grande Impacto</h3>
+                        <p><strong>IFRN (Mundo Digital para a Terceira Idade):</strong> Este projeto tem o objetivo de apresentar contribuições para a qualidade de vida de idosos da Zona Norte de Natal/RN, por meio do uso da tecnologia.</p>
+                        <p><strong>SESC - Trabalho Social com Idosos (TSI):</strong> Oferece há décadas projetos nacionais de inclusão digital, turismo social e oficinas de empreendedorismo na maturidade.</p>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="../imagens/idosos no computador.jfif">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-8">
+            <div class="section-break">
+                <h2>Abordagem Prática para o Êxito</h2>
+                <p>Estratégias de aplicação imediata em sala de aula para garantir o engajamento e o sucesso do aluno sênior.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-9">
+            <h2 class="slide-title">Estratégias Práticas Aplicadas</h2>
+            <div class="content-area">
+                <ul class="bullet-list">
+                    <li><i class="fa-solid fa-circle-check"></i><strong>Ancoragem de Conhecimento Prévio:</strong> Associe novos conceitos a experiências do passado (ex: associar o extrato de um app ao antigo talão de cheques).</li>
+                    <li><i class="fa-solid fa-circle-check"></i><strong>Ritmo Adequado (Sem Infantilizar):</strong> A velocidade de processamento muda, mas a lógica continua alta. Use tom de voz adulto e evite termos no diminutivo.</li>
+                    <li><i class="fa-solid fa-circle-check"></i><strong>Design de Interface Confortável:</strong> Textos e telas devem usar fontes legíveis (mínimo 14pt a 16pt) e alto contraste cromático.</li>
+                    <li><i class="fa-solid fa-circle-check"></i><strong>Segurança Emocional:</strong> O maior inimigo é o medo de errar em público. Valide os micro-acertos para gerar confiança e resiliência.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-10">
+            <h2 class="slide-title">Matriz de Implementação de Oficinas</h2>
+            <div class="content-area">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Domínio de Ensino</th>
+                                <th>Ação Prática Indicada</th>
+                                <th>Objetivo de Desenvolvimento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Inclusão Digital</strong></td>
+                                <td>Monitoria em pares e analogias físicas.</td>
+                                <td>Independência digital e conexão familiar.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Educação Financeira</strong></td>
+                                <td>Análise de simulações reais de crédito.</td>
+                                <td>Proteção contra fraudes e autonomia.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Projetos Intergeracionais</strong></td>
+                                <td>Idosos ensinando jovens (artes/leitura).</td>
+                                <td>Transmissão de saberes e valorização social.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide bleed-layout" id="slide-11">
+            <div class="bleed-text">
+                <h3 style="color: #1e3a8a; margin-bottom: 10px;">Educação como Resiliência</h3>
+                <p>Aprender na velhice opera como fator crítico de proteção psicológica contra perdas sociais (aposentadoria, luto) e desenvolve defesas cognitivas importantes.</p>
+            </div>
+            <div style="height: 100%;">
+                <img class="bleed-img" src="http://googleusercontent.com/image_collection/image_retrieval/10265439974508668404" alt="Idosa lendo">
+            </div>
+        </div>
+
+        <div class="slide" id="slide-12">
+            <div class="content-area" style="text-align: center; align-items: center;">
+                <i class="fa-solid fa-circle-nodes" style="font-size: 50px; color: #f59e0b; margin-bottom: 20px;"></i>
+                <h2>Conclusão</h2>
+                <p class="subtitle">"Educar o idoso não é preencher um espaço vazio, mas acender uma chama que ilumina a sua própria história."</p>
+                <p style="font-size: 14px; color: #64748b; margin-top: 20px;">Referência: Doll, Ramos & Buaes (UFRGS)</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="controls">
+        <button class="btn-nav" id="prevBtn"><i class="fa-solid fa-arrow-left"></i> Anterior</button>
+        <span class="slide-counter" id="counter">Slide 1 de 12</span>
+        <button class="btn-nav" id="nextBtn">Próximo <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const counter = document.getElementById('counter');
+        
+        let currentSlideIndex = 0;
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlideIndex) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            counter.textContent = `Slide ${currentSlideIndex + 1} de ${slides.length}`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                updateSlides();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlideIndex < slides.length - 1) {
+                currentSlideIndex++;
+                updateSlides();
+            }
+        });
+
+        // Navegação via Teclado (Setas Direcionais)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                if (currentSlideIndex < slides.length - 1) {
+                    currentSlideIndex++;
+                    updateSlides();
+                }
+            } else if (e.key === 'ArrowLeft') {
+                if (currentSlideIndex > 0) {
+                    currentSlideIndex--;
+                    updateSlides();
+                }
+            }
+        });
+    </script>
+
+    <div class="resource">
+              <div>
+                <div><strong>Baixar PDF</strong></div>
+              </div>
+              <button class="btn" onclick="baixarArquivo()">⬇️ Baixar PDF</button>
+            </div>
+    
+</div>
+<footer>
+      Página gerada para apresentação escolar • Conteúdo editável • Estilo responsivo
+    </footer>
+  </div>
+  <script>
+ 
+function baixarArquivo() {
+  const caminhoArquivo = encodeURI("../Downloads/Estratégias de Ensino para Idosos.pdf");
+  const link = document.createElement("a");
+  link.href = caminhoArquivo;
+  link.download = "../Downloads/Estratégias de Ensino para Idosos.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+  </script> 
+</body>
+</html>
